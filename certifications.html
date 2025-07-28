@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Certifications - Taha's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav>
+    <div class="logo">Taha's Portfolio</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About & Skills</a></li>
+        <li><a href="education.html">Education</a></li>
+        <!-- Make sure the 'active' class is on the correct page link! -->
+        <!-- For projects.html, it's on Projects: -->
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+    </ul>
+</nav>
+
+    <main>
+        <h1 class="page-title">My Certifications</h1>
+        <p class="page-subtitle">A collection of my professional credentials. Click on any certificate to view it in full size.</p>
+        
+        <div class="cert-grid">
+            <!-- Certificate 1 -->
+            <div class="cert-card">
+                <img src="AI_cer.jpg" alt="Basics in Machine Learning Certificate">
+                <div class="cert-info">
+                    <h3>Basics in Machine Learning</h3>
+                    <p>Covered core ML concepts such as supervised/unsupervised learning, model evaluation, and algorithms.
+Certificate issued by UniAthena and Cambridge International Qualifications, UK.
+Built a solid foundation in machine learning with verified, globally recognized credentials.</p>
+                </div>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="cert-card">
+                <img src="python_certificate.png" alt="Basics in Python Certificate">
+                <div class="cert-info">
+                    <h3>Basics in Python</h3>
+                    <p>Successfully completed the Basics of Machine Learning course, developed by UniAthena in collaboration with Cambridge International Qualifications, UK.
+
+This course introduced core ML concepts such as supervised vs</p>
+                </div>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="cert-card">
+                <img src="IIUI certificats.png" alt="Third Certificate">
+                <div class="cert-info">
+                    <h3> U.S. Mission Pakistan Workshop Certificate</h3>
+                    <p>Participated in a U.S.-funded workshop introducing high school students to nanotechnology and sustainable energy.
+Organized in partnership with the Pakistan-U.S. Alumni Network (PUAN).
+Gained exposure to advanced STEM concepts and real-world applications.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- The Modal/Lightbox structure. It's hidden by default with CSS -->
+    <div id="lightbox-modal" class="lightbox">
+        <span class="lightbox-close">×</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <footer>
+        <p>© 2024 - Taha's Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to the NEW JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

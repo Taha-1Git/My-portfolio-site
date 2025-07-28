@@ -1,0 +1,98 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #fca311;
+    --secondary-color: #14213d;
+    --background-color: #000000;
+    --text-color: #e5e5e5;
+    --card-bg-color: #1c1c1e;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background-color: var(--background-color); color: var(--text-color); line-height: 1.6; animation: fadeIn 1s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+h1, h2, h3 { color: white; font-weight: 600; }
+a { color: var(--primary-color); text-decoration: none; transition: color 0.3s ease; }
+a:hover { color: white; }
+
+/* --- Navigation Bar --- */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: rgba(28, 28, 30, 0.8); backdrop-filter: blur(10px); position: sticky; top: 0; width: 100%; z-index: 1000; }
+nav .logo { font-size: 1.5rem; font-weight: 700; color: white; }
+nav ul { list-style: none; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+nav ul li a { font-weight: 600; color: var(--text-color); position: relative; padding: 0.5rem 0; }
+nav ul li a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-color); transition: width 0.4s ease; }
+nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
+nav ul li a.active { color: var(--primary-color); }
+
+/* --- Landing Page Hero --- */
+.main-home { padding: 0; }
+.hero { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: calc(100vh - 80px); padding: 4rem 2rem; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://source.unsplash.com/random/1600x900/?technology,space') no-repeat center center/cover; }
+.profile-pic { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid var(--primary-color); box-shadow: 0 0 25px rgba(252, 163, 17, 0.5); margin-bottom: 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.profile-pic:hover { transform: scale(1.05); box-shadow: 0 0 35px rgba(252, 163, 17, 0.7); }
+.hero-title { font-size: 3.5rem; color: white; }
+.hero-subtitle { font-size: 1.5rem; color: var(--primary-color); font-weight: 300; }
+.cta-button { margin-top: 2rem; padding: 0.8rem 2.5rem; background: var(--primary-color); color: var(--secondary-color); font-size: 1.1rem; font-weight: 700; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; }
+.cta-button:hover { background-color: #ffbe3d; transform: translateY(-5px) scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+/* --- NEW TYPEWRITER STYLES --- */
+#typewriter-text {
+  display: inline-block;
+  overflow: hidden; 
+  white-space: nowrap; 
+}
+
+/* This class is added by JS when typing is done to make the cursor blink */
+#typewriter-text.typing-done {
+    animation: blink-caret .75s step-end infinite;
+}
+
+/* The typewriter cursor blinking animation */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--primary-color); }
+}
+
+
+/* --- Content Pages --- */
+.content-container { max-width: 900px; margin: 2rem auto; }
+.info-card { background: var(--card-bg-color); padding: 2rem; border-radius: 10px; border-left: 5px solid var(--primary-color); margin-bottom: 2rem; }
+.page-title { font-size: 3rem; text-align: center; margin-bottom: 1rem; color: var(--primary-color); }
+.page-subtitle { text-align: center; max-width: 600px; margin: 0 auto 3rem auto; font-size: 1.1rem; color: #aaa; }
+
+/* --- Contact Page Styles --- */
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1000px; margin: 2rem auto; }
+.contact-card { background-color: var(--card-bg-color); border-radius: 10px; padding: 2.5rem 1.5rem; text-align: center; border: 1px solid #333; transition: all 0.3s ease-in-out; }
+.contact-card:hover { transform: translateY(-10px); box-shadow: 0 15px 25px rgba(0,0,0,0.5); border-color: var(--primary-color); }
+.contact-card i { font-size: 3.5rem; margin-bottom: 1rem; transition: color 0.3s; }
+.contact-card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: white; }
+.contact-card p { color: #aaa; }
+.contact-card.linkedin:hover i { color: #0A66C2; }
+.contact-card.github:hover i { color: #dadae2; }
+.contact-card.email:hover i { color: #ea4335; }
+
+/* --- ALL OTHER EXISTING STYLES (Projects, Certs, etc.) --- */
+.project-category { margin-bottom: 4rem; }
+.project-category h2 { font-size: 2.2rem; border-bottom: 3px solid var(--primary-color); display: inline-block; padding-bottom: 0.5rem; margin-bottom: 2rem; }
+.project-grid, .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+.project-card, .cert-card { background: var(--card-bg-color); border-radius: 10px; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid #333; }
+.project-card { padding: 1.5rem; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+.project-card:hover, .cert-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+.cert-card { cursor: pointer; text-align: left; overflow: hidden; }
+.cert-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.cert-info { padding: 1.5rem; }
+.github-link { display: inline-block; background: var(--primary-color); color: var(--secondary-color); font-weight: 600; padding: 0.6rem 1.2rem; border-radius: 5px; text-align: center; margin-top: 1rem; align-self: flex-start; transition: background-color 0.3s, transform 0.2s; }
+.github-link:hover { background: #ffb703; color: var(--background-color); transform: scale(1.05); }
+.lightbox { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center; animation: fadeIn 0.5s; }
+.lightbox-content { display: block; max-width: 80vw; max-height: 80vh; animation: zoomIn 0.5s ease-out; }
+@keyframes zoomIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.lightbox-close { position: absolute; top: 20px; right: 40px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s; cursor: pointer; }
+.lightbox-close:hover { color: var(--primary-color); }
+footer { text-align: center; padding: 2rem; margin-top: 2rem; background: var(--card-bg-color); color: #aaa; }
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    nav ul { justify-content: center; gap: 1rem; }
+    .hero { min-height: unset; }
+    .hero-title { font-size: 2.5rem; }
+    .page-title { font-size: 2.2rem; }
+}

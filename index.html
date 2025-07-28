@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taha's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Taha's Portfolio</div>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About & Skills</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-home">
+        <header class="hero">
+            <img src="WhatsApp Image 2025-07-28 at 14.41.59_a8fd9f18.jpg" alt="Your Professional Photo" class="profile-pic">
+            <!-- This h1 is the target for our new JS typewriter -->
+            <h1 id="typewriter-text" class="hero-title">Muhammad Taha</h1>
+            <p class="hero-subtitle">Aspiring Computer Scientist & Developer</p>
+            
+            <a href="about.html" class="cta-button">Learn More About Me</a>
+        </header>
+    </main>
+
+    <footer>
+        <p>© 2024 - Taha's Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- NEW JAVASCRIPT FOR A PERFECT TYPEWRITER EFFECT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const typewriterElement = document.getElementById('typewriter-text');
+            const text = typewriterElement.innerHTML; // Get the text from the H1 tag
+            typewriterElement.innerHTML = ''; // Clear the H1 tag
+            typewriterElement.style.borderRight = '.15em solid var(--primary-color)'; // Set cursor
+            let i = 0;
+
+            function type() {
+                if (i < text.length) {
+                    typewriterElement.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, 150); // Speed of typing in milliseconds
+                } else {
+                    // When typing is done, make the cursor blink
+                    typewriterElement.classList.add('typing-done');
+                }
+            }
+
+            type(); // Start the animation
+        });
+    </script>
+</body>
+</html>
